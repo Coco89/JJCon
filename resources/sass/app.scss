@@ -1,0 +1,375 @@
+$base-color: #E04699;
+$font-color: #41ADEB;
+$button-color: #4098CB;
+$font-family: "Helvetica Neue", HelveticaNeue, "Helvetica-Neue", Helvetica, "BBAlpha Sans", sans-serif;
+
+$include_default_icons: false;
+
+@import 'sencha-touch/default/all';
+
+// You may remove any of the following modules that you
+// do not use in order to create a smaller css file.
+@include sencha-panel;
+@include sencha-buttons;
+@include sencha-sheet;
+@include sencha-picker;
+@include sencha-tabs;
+@include sencha-toolbar;
+@include sencha-toolbar-forms;
+@include sencha-indexbar;
+@include sencha-list;
+@include sencha-layout;
+@include sencha-carousel;
+@include sencha-form;
+@include sencha-msgbox;
+
+// Your custom code goes here...
+
+@include pictos-iconmask('download');
+
+//@mixin pictos-iconmask($download) {
+//  .x-tab .x-button-icon.#{$download},
+//  .x-button .x-button-icon.x-icon-mask.#{$download} {
+//    -webkit-mask-image: theme_image($theme-name, "pictos/" + $download + ".png");
+//  }
+//}
+
+//.x-tab img.download, .x-button img.x-icon-mask.download {
+//  -webkit-mask-image: url('');
+//}
+
+//selector coloring
+.x-list .x-list-item.x-item-selected .x-list-item-label {
+	background-image: none;
+	background-color: white;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #FFFFFF), color-stop(3%, #FFFFFF), color-stop(100%, #FFFFFF));
+	background-image: -webkit-linear-gradient(top, #FFFFFF,#FFFFFF 3%,#FFFFFF);
+	background-image: linear-gradient(top, #FFFFFF,#FFFFFF 3%,#FFFFFF);
+	border-top-color: #DDD;
+	border-bottom-color: #DDD;
+	text-shadow: none;
+	color: white;
+}
+
+.x-list .x-item-selected .x-list-disclosure {
+	background: $button-color;
+}
+
+//logo height
+.x-navigation-bar {
+	height: 53px;
+}
+
+//button icon change
+.x-list-round .x-list-disclosure {
+	background: $button-color;
+	-webkit-mask: 0 0 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpFNkNCM0JGNTZFMjI2ODExQkNGQjkwMzk3MDc3MkZFQiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3M0MzQUU1QUFDQkQxMURGOEQ2MUVDMjM0MzY2NTBDQSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3M0MzQUU1OUFDQkQxMURGOEQ2MUVDMjM0MzY2NTBDQSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkU3Q0IzQkY1NkUyMjY4MTFCQ0ZCOTAzOTcwNzcyRkVCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU2Q0IzQkY1NkUyMjY4MTFCQ0ZCOTAzOTcwNzcyRkVCIi8+IDwvcmRmOkRlc2NyaXB0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') no-repeat;
+}
+
+//events padding
+//.x-list .x-list-item .x-list-item-label {
+//	min-height: 2.6em;
+//	padding: 0.26em 0.32em;
+//}
+
+.x-list .x-list-item .x-list-item-label {
+	padding: 0.26em 0.32em;
+	h1{
+		color: $font-color;
+		margin-top: 10px;
+	}
+	h2{
+		color: $font-color;
+		font-size: 65%;
+		max-width: 245px;
+		text-align: left;
+		float: left;
+	}
+	p{
+		color: #636363;
+		font-size: smaller;
+		line-height: 1.07;
+	}
+	p span{
+		color: #4C4C4C;
+		font-size: 10px;
+		max-width: 65px;
+	}
+}
+
+//.tagline p{
+//	margin-left: 5px;
+//}
+
+.daysheader{
+	float: left;
+	margin-left: 10px;
+	font-size: 20px;
+	font-family: helvetica;
+	font-weight: bold;
+	color: #777;
+	margin-bottom: -12px;
+}
+
+//event styling
+.event h2{
+	float: left;
+	text-align: left;
+}
+
+//room styling
+.room p{
+	span{
+	float: right;
+	text-align: right;
+	}
+}
+
+//attire styling
+.eventattire {
+	max-width: 245px;
+	float: left;
+	.attire p span{
+			float: left;
+			text-align: left;
+	}
+}
+
+.smallBR br{
+	font-size: 10px;
+	line-height: 0px;
+	height: 0px;
+}
+
+//entire events styling
+//.events {
+//	h2 {
+//	float: left;
+//	text-align: left;
+//	}
+//	.room p{
+//		span{
+//		float: right;
+//		text-align: right;
+//		}
+//	}
+//}
+
+//menulist and days page
+//.x-list-round.x-list-ungrouped .x-list-item-label, .x-list-round.x-list-grouped .x-list-item-label {
+//	height: 53px;
+//}
+
+//events page
+//.x-list-normal .x-list-item .x-list-item-label {
+//	height: 53px;
+//}
+
+// thought was header opacity
+//.x-list-round .x-list-container .x-list-header {
+//	background-image: -webkit-linear-gradient(top, #EEE,rgba(238, 238, 238, 1) 30%,rgba(238, 238, 238, 1));
+//}
+
+//header opacity (Days)
+.x-list-round .x-list-header {
+//	color: #777;
+//	font-size: 1em;
+//	font-weight: bold;
+//	padding-left: 26px;
+//	line-height: 1.7em;
+//	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #EEE), color-stop(30%, rgba(238, 238, 238, 0.9)), color-stop(100%, rgba(238, 238, 238, 0.4)));
+	background-image: -webkit-linear-gradient(top, #EEE,rgba(238, 238, 238, 0.8) 30%,rgba(238, 238, 238, 0.8));
+//	background-image: linear-gradient(top, #EEE,rgba(238, 238, 238, 0.9) 30%,rgba(238, 238, 238, 0.4));
+}
+
+//title bar styling
+.x-title .x-innerhtml {
+	font-family: futura;
+	font-weight: lighter;
+	font-size: 32px;
+	font-variant: normal;
+}
+
+@mixin logo-image {
+	
+}
+
+//welcome font
+.x-html {
+		color: $font-color;
+		text-wrap: normal;
+		margin-right: 10px;
+		margin-left: 10px;
+}
+
+//welcome president image
+.headshot img{
+	border: 0;
+	width: 25%;
+	float: left;
+	margin-right: 10px;
+}
+
+//registration text color
+.text h6{
+	color: $font-color;
+	font-size: smaller;
+	margin: 5px;
+	padding: 5px;
+}
+
+.x-layout-box-item {
+	@include logo-image;
+}
+
+//time slot coloring
+.x-list-normal .x-list-header {
+	background-color: #A8A8A8;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #FDFDFD), color-stop(3%, #E9E9E9), color-stop(100%, #D3CDCD));
+	background-image: -webkit-linear-gradient(top, #FDFDFD,#E9E9E9 3%,#D3CDCD);
+	background-image: linear-gradient(top, #FDFDFD,#E9E9E9 3%,#D3CDCD);
+	color: #959595;
+	border-top: 1px solid #A8A8A8;
+	border-bottom: 1px solid #B8B8B8;
+}
+
+//map bubble styling
+//.bubble {
+//	background-color: rgba(0, 0, 0, 0.5);
+//}
+
+//map info window styling
+.infoBox{
+	@include border-radius(5px);
+	background: rgba(#000, .5);
+	color: #fff;
+//	font-family: $sans-serif, Helvetica, sans-serif;
+	padding: 10px;
+	width: 250px;	
+	font-size: 14px;
+
+	img.thumb {
+		float: left;
+		width: 80px;
+	}
+
+	h3 {
+		font-size: 15px;
+		text-transform: uppercase;
+		margin-left: 90px;
+	}
+	
+	p {
+	   margin-left: 90px;
+	}
+}
+
+//map info box contents (text)
+.x-map * {
+	//-webkit-box-sizing: content-box;
+	//box-sizing: content-box;
+	font-size: 16px;
+	text-align: left;
+	color: white;
+	border-radius: 5%;
+//	img {
+//		border-radius: 100%;
+//	}
+}
+
+//background gradient for home screen prompt
+@mixin background-gradient($bg-color, $type: $base-gradient) {
+  background-color: $bg-color;
+  @if $include-highlights {
+    @if $type == bevel {
+      @include background-image(linear-gradient(color_stops(lighten($bg-color, 30%), lighten($bg-color, 15%) 2%, lighten($bg-color, 8%) 30%, $bg-color 65%, darken($bg-color, 10%))));
+    } @else if $type == glossy {
+      @include background-image(linear-gradient(color_stops(lighten($bg-color, 15%), lighten($bg-color, 5%) 50%, $bg-color 51%, darken($bg-color, 5%))));
+    } @else if $type == recessed {
+      @include background-image(linear-gradient(color_stops(darken($bg-color, 10%), darken($bg-color, 5%) 10%, $bg-color 65%, lighten($bg-color, .5%))));
+    } @else if $type == matte {
+      @include background-image(linear-gradient(color_stops(lighten($bg-color, 30%), lighten($bg-color, 7%) 2%, darken($bg-color, 7%))));
+	// custom gradient type here
+	} @else if $type == satin {
+	  @include background-image(linear-gradient(color_stops(
+		  adjust-color($bg-color, $saturation: -15%, $lightness: 15%),
+		  adjust-color($bg-color, $saturation: -55%, $lightness: 15%) 25%,
+		  $bg-color 55%,
+		  darken($bg-color, 10%)
+	  )));
+    } @else {
+      background-image: none;
+    }
+  }
+}
+
+@mixin shield-bg() {
+	background: #ddd url(resourcs/image/icon.png) no-repeat;
+	@include background-size(80%);
+}
+
+//iPhone home screen pop up download button
+.home-screen-prompt {
+	background: rgba(black, .75);
+	
+	.banner {
+		@include background-gradient(#ccc);
+		border: 1px solid rgba(white, .5);
+		@include border-radius(.6em);
+		@include box-shadow(0 .25em 2em -.5em black);
+		font-size: small;
+		padding: .75em;
+		width: 75%;
+	}	
+
+	.x-innerhtml {
+		@include box-align(center);
+		@include display-box;
+	}
+	
+	img {
+		@include border-radius(10px);
+		display: block;
+		height: 57px;
+		width: 57px;
+	}
+
+	.text {
+		@include box-flex(1);
+	}
+	
+	.separator {
+		border-left: 1px solid rgba(white, (1/6));
+		border-right: 1px solid rgba(black, (1/6));
+		height: 57px;
+		margin: 0 .75em;
+		width: 0;
+	}
+	
+	.arrow {
+		color: #ccc;
+		font-family: monospace;
+		font-size: 350%;
+		font-weight: 900;
+	}
+}
+
+//@mixin rounded-top {
+//  $side: top;
+//  $radius: 10px;
+//
+//  border-#{$side}-radius: $radius;
+//  -moz-border-radius-#{$side}: $radius;
+//  -webkit-border-#{$side}-radius: $radius;
+//}
+//
+//#navbar li { @include rounded-top; }
+//#footer { @include rounded-top; }
+
+@mixin other-font {
+	$font-color: gray;
+	$font-size: 8;
+}
+
+#theme { @include other-font; }
+#location { @include other-font; }
